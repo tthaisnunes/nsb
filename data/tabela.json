@@ -1,0 +1,44 @@
+{
+   "data":[
+      {
+         "cod_operadora":1,
+         "nom_razaosocial":"VIVO S\/A",
+         "nom_fantasia":"VIVO",
+         "num_cnpj":"02449992000164",
+         "num_inscestadual":"85202928",
+         "sit_operadora":"A"
+      },
+      {
+         "cod_operadora":2,
+         "nom_razaosocial":"BRASIL TELECOM S\/A",
+         "nom_fantasia":"OI",
+         "num_cnpj":"76535764000143",
+         "num_inscestadual":"250427648",
+         "sit_operadora":"A"
+      },
+      {
+         "cod_operadora":3,
+         "nom_razaosocial":"EMPRESA BRASILEIRA DE TELECOMUNICACOES S\/A",
+         "nom_fantasia":"EMBRATEL",
+         "num_cnpj":"33530486000129",
+         "num_inscestadual":"81671341",
+         "sit_operadora":"A"
+      },
+      {
+         "cod_operadora":4,
+         "nom_razaosocial":"UNIFY - SOLUCOES EM TECNOLOGIA DA INFORMACAO LTDA.",
+         "nom_fantasia":"UNIFY",
+         "num_cnpj":"67071001000360",
+         "num_inscestadual":null,
+          "sit_operadora":"A"
+      },
+      {
+         "cod_operadora":7,
+         "nom_razaosocial":"MINUTES4ALL TELECOMUNICACOES LTDA.",
+         "nom_fantasia":"VIP VOIP",
+         "num_cnpj":"07782199000104",
+         "num_inscestadual":null,
+         "sit_operadora":"A"
+      }
+   ]
+}

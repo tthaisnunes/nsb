@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+	<title>Layout 3 colunas</title>
+
+	<style>
+	#header {
+		width:1000px;
+		height:100px;
+		background-color:#dbe6ff;
+	}
+
+	#conteudo{
+		width:1000px;
+		background-color:#efefef;	
+	}
+
+	#footer{
+		width:1000px;
+		height:100px;
+		background-color:#C0C0C0;
+		clear: both;
+	}
+
+	#conteudo-left {
+		width:500px;
+		height:100%;
+		float:left;
+		background-color:#ffefe2;
+	}
+
+	#conteudo-right {
+		width:500px;
+		height:100%;
+		float:left;
+		background-color:#f0ffe2;
+	}
+
+	/* celphone and small screens */
+	@media screen and (max-width: 768px) {
+		#header,
+		#conteudo-left,
+		#conteudo-right,
+		#conteudo,
+		#footer{
+			width: 100%;
+		}
+	}
+
+	/* larger screens */
+	@media screen and (min-width: 769px) {
+		#header,
+		#footer{
+			font-weight: bold;
+		}
+	}
+
+	/* print */
+	@media print {
+		#header,
+		#conteudo-left,
+		#conteudo-right,
+		#conteudo,
+		#footer{
+			background-color:#fff;
+		}
+	}
+</style>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="header">
+			Cabeçalho
+		</div>
+
+		<div id="conteudo">
+			<div id="conteudo-left">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt porttitor ipsum, mattis blandit erat efficitur a. Mauris sit amet mi ut libero bibendum pretium sed quis neque. Morbi quis sem porta, suscipit urna at, interdum justo. Curabitur consectetur turpis in bibendum tempor. Maecenas sed malesuada metus. Nunc non pretium turpis. Donec tristique, ante id consectetur hendrerit, mauris metus ultricies velit, eget laoreet nulla orci vitae libero. Integer ut magna vel mi rhoncus consectetur. Aenean sed enim at orci sodales feugiat. Phasellus lacinia purus nec felis vehicula mollis. Morbi congue bibendum mi in tincidunt. Fusce quis semper justo. Praesent suscipit sem non sapien malesuada, sed rhoncus dui eleifend.</p>
+				<p>Nullam metus odio, scelerisque eu ex non, scelerisque suscipit lectus. Aliquam quis nisi ante. Sed ullamcorper molestie lorem, ac tristique lacus imperdiet sit amet. Etiam diam nisl, eleifend a faucibus nec, euismod sit amet metus. Integer ut orci lobortis, iaculis dolor id, egestas orci. Duis justo lorem, consequat sit amet condimentum ac, faucibus et ante. Etiam a odio eros. Nullam eleifend, arcu a condimentum efficitur, mauris dolor rhoncus tellus, id ultricies enim metus quis ex. Mauris dolor neque, ultrices vitae massa id, venenatis consequat sapien. Suspendisse metus augue, placerat id porttitor vel, finibus egestas tellus. Maecenas hendrerit sollicitudin sem. Cras felis enim, dignissim in tristique porta, pharetra vel nisi. Donec luctus rutrum augue, id venenatis metus feugiat imperdiet. Duis suscipit dui sit amet enim dapibus molestie vitae at nulla. Aliquam et metus ex. Nulla a sapien viverra, accumsan odio accumsan, ultrices eros.</p>
+				<p>Cras in nisi faucibus, congue dui at, tincidunt turpis. Cras vestibulum molestie luctus. Nulla euismod quam tortor, id fermentum leo lobortis molestie. Donec dignissim viverra tincidunt. Quisque ante nibh, eleifend blandit leo nec, pulvinar ullamcorper est. Proin at maximus massa. In ac velit in risus euismod consequat iaculis eu urna. Phasellus venenatis tortor a nulla convallis ornare. Duis id tortor eu lectus accumsan interdum at quis eros. Nulla sit amet elit sapien. Sed eu leo urna. Quisque fermentum dapibus justo, sit amet scelerisque purus vestibulum eu.</p>
+				<p>Maecenas eu enim felis. Morbi laoreet turpis eu ex tempor egestas. Curabitur lacinia metus velit, id pharetra massa congue sed. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Pellentesque aliquet massa ut diam convallis, id maximus turpis ullamcorper. Fusce elementum risus vitae varius euismod. Nulla justo felis, tristique non tempus sit amet, tempor et erat. Pellentesque dapibus fermentum magna. Duis eu dolor non diam dapibus placerat. Mauris lacus elit, pharetra vitae mollis et, accumsan eget arcu. In cursus congue nibh, sit amet maximus massa consectetur sed. Nulla elementum hendrerit leo ac tristique. Nunc sit amet sodales turpis, viverra mollis ante.</p>
+				<p>Praesent feugiat vel est in vestibulum. Pellentesque ipsum enim, bibendum nec arcu non, tristique tincidunt purus. Integer in porttitor felis. Suspendisse auctor varius turpis, quis sodales metus egestas a. Pellentesque pharetra leo ut ornare rhoncus. Suspendisse aliquam tincidunt efficitur. Vivamus fermentum nulla dolor, vulputate varius ex tincidunt vitae. Nam purus dui, iaculis vel scelerisque at, cursus in tellus. Maecenas in nulla magna. Cras volutpat dui et nibh viverra pretium. Vivamus mattis, risus in tristique venenatis, felis est tempor turpis, quis condimentum mi eros non massa. Pellentesque mollis, nunc vulputate semper cursus, diam arcu vulputate ligula, sit amet pharetra justo erat sed nulla. Aliquam quis efficitur turpis.</p>
+			</div>
+
+			<div id="conteudo-right">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt porttitor ipsum, mattis blandit erat efficitur a. Mauris sit amet mi ut libero bibendum pretium sed quis neque. Morbi quis sem porta, suscipit urna at, interdum justo. Curabitur consectetur turpis in bibendum tempor. Maecenas sed malesuada metus. Nunc non pretium turpis. Donec tristique, ante id consectetur hendrerit, mauris metus ultricies velit, eget laoreet nulla orci vitae libero. Integer ut magna vel mi rhoncus consectetur. Aenean sed enim at orci sodales feugiat. Phasellus lacinia purus nec felis vehicula mollis. Morbi congue bibendum mi in tincidunt. Fusce quis semper justo. Praesent suscipit sem non sapien malesuada, sed rhoncus dui eleifend.</p>
+				<p>Nullam metus odio, scelerisque eu ex non, scelerisque suscipit lectus. Aliquam quis nisi ante. Sed ullamcorper molestie lorem, ac tristique lacus imperdiet sit amet. Etiam diam nisl, eleifend a faucibus nec, euismod sit amet metus. Integer ut orci lobortis, iaculis dolor id, egestas orci. Duis justo lorem, consequat sit amet condimentum ac, faucibus et ante. Etiam a odio eros. Nullam eleifend, arcu a condimentum efficitur, mauris dolor rhoncus tellus, id ultricies enim metus quis ex. Mauris dolor neque, ultrices vitae massa id, venenatis consequat sapien. Suspendisse metus augue, placerat id porttitor vel, finibus egestas tellus. Maecenas hendrerit sollicitudin sem. Cras felis enim, dignissim in tristique porta, pharetra vel nisi. Donec luctus rutrum augue, id venenatis metus feugiat imperdiet. Duis suscipit dui sit amet enim dapibus molestie vitae at nulla. Aliquam et metus ex. Nulla a sapien viverra, accumsan odio accumsan, ultrices eros.</p>
+				<p>Cras in nisi faucibus, congue dui at, tincidunt turpis. Cras vestibulum molestie luctus. Nulla euismod quam tortor, id fermentum leo lobortis molestie. Donec dignissim viverra tincidunt. Quisque ante nibh, eleifend blandit leo nec, pulvinar ullamcorper est. Proin at maximus massa. In ac velit in risus euismod consequat iaculis eu urna. Phasellus venenatis tortor a nulla convallis ornare. Duis id tortor eu lectus accumsan interdum at quis eros. Nulla sit amet elit sapien. Sed eu leo urna. Quisque fermentum dapibus justo, sit amet scelerisque purus vestibulum eu.</p>
+				<p>Maecenas eu enim felis. Morbi laoreet turpis eu ex tempor egestas. Curabitur lacinia metus velit, id pharetra massa congue sed. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Pellentesque aliquet massa ut diam convallis, id maximus turpis ullamcorper. Fusce elementum risus vitae varius euismod. Nulla justo felis, tristique non tempus sit amet, tempor et erat. Pellentesque dapibus fermentum magna. Duis eu dolor non diam dapibus placerat. Mauris lacus elit, pharetra vitae mollis et, accumsan eget arcu. In cursus congue nibh, sit amet maximus massa consectetur sed. Nulla elementum hendrerit leo ac tristique. Nunc sit amet sodales turpis, viverra mollis ante.</p>
+				<p>Praesent feugiat vel est in vestibulum. Pellentesque ipsum enim, bibendum nec arcu non, tristique tincidunt purus. Integer in porttitor felis. Suspendisse auctor varius turpis, quis sodales metus egestas a. Pellentesque pharetra leo ut ornare rhoncus. Suspendisse aliquam tincidunt efficitur. Vivamus fermentum nulla dolor, vulputate varius ex tincidunt vitae. Nam purus dui, iaculis vel scelerisque at, cursus in tellus. Maecenas in nulla magna. Cras volutpat dui et nibh viverra pretium. Vivamus mattis, risus in tristique venenatis, felis est tempor turpis, quis condimentum mi eros non massa. Pellentesque mollis, nunc vulputate semper cursus, diam arcu vulputate ligula, sit amet pharetra justo erat sed nulla. Aliquam quis efficitur turpis.</p>
+			</div>
+		</div>
+
+		<div id="footer">
+			Teste - 2017
+		</div>
+	</div>
+</body>
+</html>

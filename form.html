@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+	<meta http-equiv="Cache-Control" content="no-store" />
+
+	<title>Teste NSB - Formulário</title>
+
+	<link rel="shortcut icon" type='image/x-icon' href="images/favicon.ico"/>
+
+	<!-- fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lato|Merriweather" rel="stylesheet">
+
+	<!-- css -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+	<section id="register">
+		<div class="container">
+			<h2>Formulário de cadastro</h2>
+			<div class="row">
+				<div class="col-sm-4 col-xs-12">
+					<form id="form-register" name="form-register">
+						<div class="form-group">
+							<label for="code">Código:</label>
+							<input type="text" name="code" class="form-control" id="code" placeholder="Código" maxlength="11">
+						</div>
+						<div class="form-group">
+							<label for="name">Nome:</label>
+							<input type="text" name="name" class="form-control" id="name" placeholder="Nome" maxlength="50">
+						</div>
+						<div class="form-group">
+							<label for="cpf">CPF:</label>
+							<input type="text" name="cpf" class="form-control" id="cpf" placeholder="CPF" maxlength="11">
+						</div>
+
+						<button type="button" class="btn btn-default" onclick="sendData('form-register')">Cadastrar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- scripts -->
+	<script	type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.mask/1.14.10/jquery.mask.min.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('input[name="code"]').mask("99999999999");
+			$('input[name="cpf"]').mask("999.999.999-99");
+		});
+
+		var form = $("#form-register");
+
+		$("#form-register").validate({
+			errorElement: 'span',
+			rules: {
+				code: {
+					maxlength: 11,
+					number: true
+				},
+				name: {
+					maxlength: 50,
+					alphanumeric: true,
+				},
+				cpf: {
+					required: true
+				}
+			},
+			messages: {
+				code: {
+					maxlength: "Desculpe, tamanho máximo de 11 caracteres.",
+					number: "Favor, preencha um código válido."
+				},
+				name: {
+					maxlength: "Desculpe, tamanho máximo de 50 caracteres.",
+					alphanumeric: "Favor, preencha seu nome sem acentos e/ou caracteres especiais."
+				},
+				cpf: {
+					required: "Favor, preencha seu CPF."
+				}
+			}
+		});
+
+		function sendData(data) {
+			if (form.valid()) {
+				var XHR = new XMLHttpRequest();
+				var urlEncodedData = "";
+				var urlEncodedDataPairs = [];
+				var name;
+
+				for(name in data) {
+					urlEncodedDataPairs.push(encodeURIComponent(name) + '=' + encodeURIComponent(data[name]));
+				}
+
+				urlEncodedData = urlEncodedDataPairs.join('&').replace(/%20/g, '+');
+
+				XHR.addEventListener('load', function(event) {
+					console.log('Dados enviados com sucesso');
+				});
+
+				XHR.addEventListener('error', function(event) {
+					alert('Ocorreu um erro durante o processamento');
+				});
+
+				XHR.open('POST', 'https://example.com/cors.php');
+				XHR.setRequestHeader('Content-Type', 'application/json');
+				XHR.send(urlEncodedData);
+			}
+			
+			return false;
+		}
+	</script>
+</body>
+</html>

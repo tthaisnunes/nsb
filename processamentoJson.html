@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+	<meta http-equiv="Cache-Control" content="no-store" />
+
+	<title>Teste NSB - Dados tabulados</title>
+
+	<link rel="shortcut icon" type='image/x-icon' href="images/favicon.ico"/>
+
+	<!-- fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lato|Merriweather" rel="stylesheet">
+
+	<!-- css -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.min.css">
+	
+</head>
+<body>
+	<section id="json-processing">
+		<div class="table-responsive">
+			<table class="table" id="data-table">
+				<tr class="bg-dark-blue">
+					<th class="color-white">
+						Código Operadora
+					</th>
+					<th class="color-white">
+						Razão social
+					</th>
+					<th class="color-white">
+						Nome Fantasia
+					</th>
+					<th class="color-white">
+						CNPJ
+					</th>
+					<th class="color-white">
+						Inscestadual
+					</th>
+					<th class="color-white">
+						Sit Operadora
+					</th>
+				</tr>
+			</table>
+		</div>
+	</section>
+
+	<!-- scripts -->
+	<script	type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script>
+		$.ajax({
+			type: 'GET',
+			url: "data/tabela.json",
+			dataType: 'json',
+			contentType: 'application/json',
+			success: function(obj) 
+			{
+				for (var i = obj.data.length - 1; i >= 0; i--) {
+
+					var newRow = $("<tr>");         
+					var cols = "";
+					cols += "<td>" + obj.data[i].cod_operadora + "</td>";          
+					cols += "<td>" + obj.data[i].nom_razaosocial + "</td>";          
+					cols += "<td>" + obj.data[i].nom_fantasia + "</td>";          
+					cols += "<td>" + obj.data[i].num_cnpj + "</td>";
+					cols += "<td>" + obj.data[i].num_inscestadual + "</td>";
+					cols += "<td>" + obj.data[i].sit_operadora + "</td>";
+					newRow.append(cols);            
+					$("#data-table").append(newRow);  
+				}
+			},
+		}); 
+	</script>
+</body>
+</html>
